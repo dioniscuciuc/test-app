@@ -1,3 +1,6 @@
+@import "posts.css";
+@import "bootstrap.css";
+
 body {
   margin: 0;
   padding: 0;
