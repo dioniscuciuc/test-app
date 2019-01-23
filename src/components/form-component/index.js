@@ -41,7 +41,13 @@ export default class Form extends React.Component{
            submitted: true
         });
         if(this.state.title && this.state.body && this.state.tags.length){
-            this.props.addPost(this.state);
+            let savedPosts = JSON.parse(localStorage.getItem('simpalsPosts'));
+            this.props.addPost({
+                id: savedPosts[savedPosts.length - 1].id + 1,
+                title: this.state.title,
+                body: this.state.body,
+                tags: this.state.tags
+            });
             this.setState({
                 title:'',
                 body: '',
